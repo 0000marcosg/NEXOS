@@ -37,6 +37,12 @@ void draw()
   
   // Map mouseX from 20Hz to 1000Hz for frequency  
   float frequency = map(sensor, 0, 2500, 80.0, 1000.0);
-  sine.freq(frequency);
   
+  if (sensor > 1200) {
+    sine.amp(1);
+    sine.freq(frequency);
+  } else {
+    sine.amp(0);
+  }
+}  
 }
